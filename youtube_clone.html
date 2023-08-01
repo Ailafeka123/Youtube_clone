@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Youtube Clone Project</title>
+        <link rel="stylesheet" href="./style/general.css">
+        <link rel="stylesheet" href="./style/head.css">
+        <link rel="stylesheet" href="./style/left_menu.css">
+        <link rel="stylesheet" href="./style/content.css">
+        <script src="./left_menu.js"></script>
+        <!-- <script>
+            function left_menu_button(){
+                const left_menu_id = document.getElementById('left_menu')
+                const left_menu_style = window.getComputedStyle(left_menu_id);
+                const displayValue = left_menu_style.display;
+                console.log(left_menu_id);
+                console.log( displayValue);
+                if(displayValue == 'none'){
+                    document.getElementById('left_menu').style.display='block';
+                    document.getElementById('content').style.width="calc(100% - 220px)";
+                    // document.getElementById('content').style.right="-220px";
+                    document.getElementById('close_left_menu').style.display='block';
+                }
+                else{
+                    document.getElementById('left_menu').style.display='none';
+                    document.getElementById('content').style.width="100%";
+                    // document.getElementById('content').style.right="0px";
+                    document.getElementById('close_left_menu').style.display='none';
+                }
+            }
+        </script> -->
+    </head>
+    <body>
+        <!-- 置頂選單 -->
+        <div class="header">
+            <div class="left_header">
+                <div class = "left_menu_button" id="left_menu_button">
+                    <img src="./picture/header_picture/left_button.png" style="height:23px;width:19px; margin-left:6px;margin-top:2px;"
+                    onclick="left_menu_button()">
+                </div>
+                <div id="Youtube_icon" style = "margin-left:20px;">
+                    <a href="./youtube_clone.html" title="Youtube Home">
+                        <img src="./picture/header_picture/Youtube_icon.png" style="height:40px;">
+                    </a>
+                </div>
+            </div>
+            <!-- 左側兩個icon完成 -->
+            <!-- 中間搜尋功能 -->
+            <div class = "mid_header">
+                <input type="search" placeholder="search" class="search_bar">
+
+                <div title="Search">
+                    <img src="./picture/header_picture/Search_button.png"  class="Search_icon">
+                </div>
+                <div style="margin-left:20px;">
+                    <img src="./picture/header_picture/Search_voice_button.png" title="Search with your voice" class ="head_button">
+                </div>
+            </div>
+            <!-- 搜尋功能完成 -->
+            <!-- 右側個人訊息開始 -->
+            <div class = "right_header">
+                <div title="Create">
+                    <img class ="head_button" src="./picture/header_picture/video.png" style="
+                    margin-right:10px;
+                    height:40px;
+                    width:40px;
+                    object-fit:cover;
+                    object-position:center;
+                    border-radius:90px;">
+                </div>
+                <div title="Notification">
+                    <img class ="head_button" src="./picture/header_picture/noice.png"style="
+                    margin-right:10px;
+                    height:40px;
+                    width:40px;
+                    object-fit:cover;
+                    object-position:center;
+                    border-radius:90px;">
+                </div>
+                <div>
+                    <img  class="counter_face"src="./picture/header_picture/counter.png" style="height:40px;
+                    width:40px;
+                    object-fit:cover;
+                    object-position:center;
+                    border-radius:90px;">
+                </div>
+            </div>
+            <!-- 右側個人訊息結束 -->
+        </div>
+        <!-- 置頂選單結束 -->
+        <!-- 左側開啟選單 -->
+        <div class = "left_menu" id = "left_menu">
+            <!-- 頂端重複的icon -->
+            <div class="left_menu_icon">
+                <div class = "left_menu_button" id="left_menu_button">
+                    <img src="./picture/header_picture/left_button.png" style="height:23px;width:19px; margin-left:6px;margin-top:2px;"
+                    onclick="left_menu_button()" >
+                </div>
+                <div id="Youtube_icon" style = "margin-left:20px;">
+                    <a href="./youtube_clone.html" title="Youtube Home">
+                        <img src="./picture/header_picture/Youtube_icon.png" style="height:40px;">
+                    </a>
+                </div>
+            </div>
+            <!-- 頂端重複icon結束 -->
+            <!-- home -->
+            <div style="background-color:black; padding:6px;">
+                <div style="background-color:black; padding:0 10px;">
+                    <div class="left_button">
+                        <img src="./picture/left_menu_picture/home.jpg">
+                        <a style="margin-left:20px;">home</a>
+                    </div>
+                </div>
+                <!-- short -->
+                <div style="background-color:black; padding:0 10px;">
+                    <div class="left_button">
+                        <img src="./picture/left_menu_picture/shorts.jpg">
+                        <a style="margin-left:20px;">shorts</a>
+                    </div>
+                </div>
+
+                <div style="background-color:black; padding:0 10px;">
+                    <div class="left_button">
+                        <img src="./picture/left_menu_picture/sub.jpg">
+                        <a style="margin-left:20px;">subscriptions</a>
+                    </div>
+                </div>
+
+                <hr style="border-color:white;">
+            </div>
+           
+        </div>
+        <!-- 右側半頭明背景 -->
+        <div class = "close_left_menu" id="close_left_menu" onclick="left_menu_button()">
+        </div>
+        <!-- 右側半透明背景結束 -->
+        <!-- 右側開啟選單結束 -->
+        <!-- 內容開始 -->
+        <div class="content" id="content">
+            <div class = "view" styele = "display:block;">
+                <img class = "thumbnail" src="./picture/content_picture/1.jpg">
+                <div style="
+                    display:inline-block; 
+                    margin-top:10px; 
+                    display:grid;   
+                    /* 將display設定為固定的grid  */
+                    grid-template-columns:80px 1fr;
+                    /* 然後第一個grid是80px，剩下的是第二個的空間，如果同時有多個fr就是看多少fr數字的比例平分剩下空間  */
+                    column-gap:10px;
+                    /* 兩個grid的水平空間間隔多少 */
+                    row-gap:10px;
+                    /* 垂直空間間隔多少 */
+                    ">
+                    <img class = "facePicture" src="./picture/content_picture/2.jpg">
+                    <div style="display:block">
+                        <a style="color:white; font-size:20px;">製作者: 艾拉菲卡1</a>
+                        <p>聯絡方式:ailafeka@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "view" styele = "display:block;">
+                <img class = "thumbnail" src="./picture/content_picture/3.jpg">
+                <div style="
+                    display:inline-block; 
+                    margin-top:10px; 
+                    display:grid;   
+                    grid-template-columns:80px 1fr;
+                    column-gap:10px;
+                    row-gap:10px;
+                    ">
+                    <img class = "facePicture" src="./picture/content_picture/4.jpg">
+                    <div style="display:block">
+                        <a style="color:white; font-size:20px;">製作者: 艾拉菲卡2</a>
+                        <p>聯絡方式:ailafeka@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "view" styele = "display:block;">
+                <img class = "thumbnail" src="./picture/content_picture/5.jpg">
+                <div style="
+                    display:inline-block; 
+                    margin-top:10px; 
+                    display:grid;   
+                    grid-template-columns:80px 1fr;
+                    column-gap:10px;
+                    row-gap:10px;
+                    ">
+                    <img class = "facePicture" src="./picture/content_picture/6.jpg">
+                    <div style="display:block">
+                        <a style="color:white; font-size:20px;">製作者: 艾拉菲卡3</a>
+                        <p>聯絡方式:ailafeka@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "view" styele = "display:block;">
+                <img class = "thumbnail" src="./picture/content_picture/7.jpg">
+                <div style="
+                    display:inline-block; 
+                    margin-top:10px; 
+                    display:grid;   
+                    grid-template-columns:80px 1fr;
+                    column-gap:10px;
+                    row-gap:10px;
+                    ">
+                    <img class = "facePicture" src="./picture/content_picture/8.jpg">
+                    <div style="display:block">
+                        <a style="color:white; font-size:20px;">製作者: 艾拉菲卡4</a>
+                        <p>聯絡方式:ailafeka@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 內容結束 -->
+    </body>
+</html>
