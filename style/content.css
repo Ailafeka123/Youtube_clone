@@ -10,8 +10,8 @@
 
 .facePicture{
     /* margin-top:15px; */
-    height:60px;
-    width:60px;
+    height:40px;
+    width:40px;
     object-fit:cover;
     object-position:center;
     border-radius:90px;
@@ -20,7 +20,7 @@
     background-color:rgb(97, 97, 98);
     border-color:rgb(57, 139, 139);
     border:15px;
-    width:300px;
+    width:400px;
     height:300px;
     margin-left:15px;
     margin-top:15px;
@@ -29,8 +29,27 @@
 }
 
 .thumbnail{
-    width: 300px;
+    width: 400px;
     height:200px;
     object-fit:cover;
     object-position:top;
+}
+
+.text-container{
+    width: 330px; /* 限定文字容器的寬度 */
+    height:40px;
+    /* white-space: nowrap;  */
+    /* 禁止文字換行 */
+    overflow: hidden; 
+    /* 隱藏超出容器的文字 */
+    text-overflow: ellipsis; 
+    /* 使用省略號表示截斷 */
+}
+
+.author{
+    text-decoration:none;
+    color:rgb(202, 202, 202);
+}
+.author:hover{
+    color:white;
 }
